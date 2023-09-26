@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Notifications\StudentRegisteredNotification;
 use Illuminate\Http\Request;
 use App\Models\Student;
 
@@ -26,6 +26,7 @@ class StudentController extends Controller
         ]);
 
         $student->save();
+        $student->notify(new StudentRegisteredNotification($validatedData));
 
         return response()->json([
             'code' => 200,

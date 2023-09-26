@@ -13,8 +13,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        
+        \App\Console\Commands\AddCourse::class,
         \App\Console\Commands\AddStudent::class,
+        \App\Console\Commands\EnrollStudentInCourse::class,
     ];
 
     /**
