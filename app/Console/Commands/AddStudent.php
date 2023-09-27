@@ -22,13 +22,11 @@ class AddStudent extends Command
         $email = $this->argument('email');
         $phone = $this->argument('phone');
 
-        // Check if the email already exists in the database
         if (Student::where('email', $email)->exists()) {
             $this->error('Student with this email already exists.');
             return;
         }
 
-        // Create and save the new student only if the email doesn't exist
         $student = new Student([
             'first_name' => $firstName,
             'last_name' => $lastName,

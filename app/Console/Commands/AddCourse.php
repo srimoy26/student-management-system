@@ -7,7 +7,7 @@ use App\Models\Course;
 
 class AddCourse extends Command
 {
-    protected $signature = 'course:add {id} {name}';
+    protected $signature = 'course:add {name}';
     protected $description = 'Add a new course to the courses table';
 
     public function __construct()
@@ -17,11 +17,9 @@ class AddCourse extends Command
 
     public function handle()
     {
-        $id = $this->argument('id');
         $name = $this->argument('name');
 
         $course = new Course([
-            'id' => $id,
             'name' => $name,
         ]);
 
