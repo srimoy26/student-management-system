@@ -16,6 +16,7 @@ class Kernel extends ConsoleKernel
         \App\Console\Commands\AddCourse::class,
         \App\Console\Commands\AddStudent::class,
         \App\Console\Commands\EnrollStudentInCourse::class,
+        \App\Console\Commands\ImportStudentsFromS3::class,
     ];
 
     /**
